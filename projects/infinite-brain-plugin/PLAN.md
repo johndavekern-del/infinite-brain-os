@@ -97,35 +97,35 @@ Out of scope:
 
 - [ ] `task-scaffold-package` Scaffold pyproject, package layout, README
   - mode: manual
-  - status: in_progress
+  - status: completed
   - depends_on: none
   - blocks: task-core-index, task-http-api
   - acceptance: Package imports and `pip install -e .` metadata is valid.
   - anchored_sprint: none
 - [ ] `task-core-index` Frontmatter parser, repo index, retrieval scoring
   - mode: manual
-  - status: proposed
+  - status: completed
   - depends_on: task-scaffold-package
   - blocks: task-http-api
   - acceptance: Index builds over the real repo; search returns ranked results.
   - anchored_sprint: none
 - [ ] `task-http-api` HTTP server, plugin manifest, CLI
   - mode: manual
-  - status: proposed
+  - status: completed
   - depends_on: task-core-index
   - blocks: task-tests
   - acceptance: All v1 endpoints respond; manifest endpoint validates as JSON.
   - anchored_sprint: none
 - [ ] `task-tests` Stdlib unittest suite
   - mode: manual
-  - status: proposed
+  - status: completed
   - depends_on: task-http-api
   - blocks: none
   - acceptance: `python -m unittest` passes on Python 3.11.
   - anchored_sprint: none
 - [ ] `task-fastapi-adapter` Optional FastAPI app factory
   - mode: manual
-  - status: proposed
+  - status: completed
   - depends_on: task-http-api
   - blocks: none
   - acceptance: Adapter module imports cleanly when FastAPI is present, skipped otherwise.
@@ -133,8 +133,9 @@ Out of scope:
 
 ## Outputs
 
-- None yet; code will live in this project folder, not in `outputs/`, because it is the
-  project deliverable itself.
+- `projects/infinite-brain-plugin/src/infinite_brain/`: the plugin package (v0.1.0).
+- `projects/infinite-brain-plugin/tests/`: unittest suite, 25 tests passing.
+- `projects/infinite-brain-plugin/README.md`: install and host-integration guide.
 
 ## Notes
 
@@ -146,3 +147,5 @@ Out of scope:
 ## Change log
 
 - 2026-10-12: Created project during session `session-2026-10-12-infinite-brain-plugin`.
+- 2026-10-12: v0.1.0 built and verified: 25 tests passing, live smoke test against the
+  real repo served 237 nodes with all endpoints green.

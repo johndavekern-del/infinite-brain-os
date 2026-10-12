@@ -13,3 +13,11 @@ append-only summary of prompts, decisions, and tool-level outcomes.
   disconnect. Default chosen: portable standalone package with generic HTTP plugin API.
 - Environment check: Python 3.11.2, no PyPI access (SSL failure to pypi.org), no pyyaml or
   fastapi installed. Decision: zero-dependency stdlib core, optional FastAPI extra.
+
+## Completion entries
+
+- Built package: frontmatter parser, index, retrieval, manifest, openapi, stdlib server,
+  FastAPI adapter, CLI. 25 unittest tests passing.
+- Smoke tested against the real repo: 237 nodes indexed, all endpoints green.
+- Validator clean, no dash-style violations. PLAN tasks marked completed.
+- Closeout review written; session record moved to closed.
