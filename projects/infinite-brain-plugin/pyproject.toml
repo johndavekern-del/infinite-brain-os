@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "infinite-brain"
+version = "0.1.0"
+description = "Standalone plugin that serves an Infinite Brain knowledge repo to any web-based agentic OS over HTTP."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "the-operator" }]
+keywords = ["agentic-os", "plugin", "knowledge-graph", "retrieval", "infinite-brain"]
+dependencies = []
+
+[project.optional-dependencies]
+web = ["fastapi>=0.100", "uvicorn>=0.23"]
+dev = ["pytest>=7"]
+
+[project.scripts]
+infinite-brain = "infinite_brain.cli:main"
+
+[project.urls]
+Homepage = "https://example.invalid/infinite-brain"
+
+[tool.setuptools.packages.find]
+where = ["src"]
